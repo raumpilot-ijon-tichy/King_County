@@ -28,7 +28,7 @@ for i in range(df_kc.shape[0]):
         df_kc["yr_renovated"][i] = df_kc["yr_built"][i]
 
 # Remove outlier
-df_kc.drop(df_kc.index[15856], axis=0, inplace=True)
+df_kc = df_kc[df_kc["bedrooms"] != 33]
 
 # Feature engineering
 df_kc["pp_sqft_living"] = df_kc["price"] / df_kc["sqft_living"]
